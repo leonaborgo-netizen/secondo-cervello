@@ -5,7 +5,7 @@
   "description": "Secondo Cervello: assistente personale e memoria intelligente (Express + SQLite + PWA)",
   "engines": { "node": ">=20" },
   "scripts": {
-    "start": "node server/index.js",
+    "start": "node index.js",
     "dev": "node --watch server/index.js"
   },
   "dependencies": {
