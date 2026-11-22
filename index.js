@@ -9,6 +9,7 @@ const ai = require('./ai');
 
 const app = express();
 app.disable('x-powered-by');
+app.get/(req, res) =\ res.send('Benvenuto nel Secondo Cervello');
 
 /* ---------- Ambiente cloud ---------- */
 const PROD = process.env.NODE_ENV === 'production';
