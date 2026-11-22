@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: secondo-cervello
+    runtime: node
+    plan: starter            # i dischi persistenti richiedono un piano a pagamento
+    buildCommand: npm install --omit=dev
+    startCommand: npm start
+    healthCheckPath: /api/health
+    disk:
+      name: data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: NODE_ENV
+        value: production
+      - key: DATA_DIR
+        value: /var/data
+      - key: APP_PASSWORD
+        sync: false           # la inserisci tu nel dashboard
+      - key: AI_PROVIDER
+        value: anthropic
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: OPENAI_API_KEY   # solo per Whisper (o lascia vuoto)
+        sync: false
